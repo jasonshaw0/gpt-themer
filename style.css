@@ -1,0 +1,61 @@
+:root {
+  --custom-bg-color: #1a1a1a;
+  --custom-text-color: #f0f0f0;
+  --custom-header-color: #66b2ff;
+
+  /* Sidebar */
+  --custom-sidebar-width: 260px;
+  --custom-sidebar-rail-width: 8px;
+
+  /* Content area */
+  --custom-content-max-width: 768px;
+  --custom-content-margin: 16px;
+
+  /* Composer */
+  --custom-prompt-height: 70px; /* min height */
+  --custom-composer-font-size: 14px;
+  --custom-composer-radius: 12px;
+  --custom-composer-padding: 10px;
+}
+
+/* Global colors */
+html.dark, body {
+  background-color: var(--custom-bg-color) !important;
+  color: var(--custom-text-color) !important;
+}
+
+.text-page-header {
+  color: var(--custom-header-color) !important;
+}
+
+/* ---- Sidebar controls ---- */
+:root {
+  /* Propagate custom sizes into site variables used in layout */
+  --sidebar-width: var(--custom-sidebar-width);
+  --sidebar-rail-width: var(--custom-sidebar-rail-width);
+}
+
+/* Sidebar container width (left panel) often uses w-[var(--sidebar-width)] */
+/* No direct override needed if --sidebar-width is set above. */
+
+/* ---- Content area controls ---- */
+/* Many containers set these variables on themselves; we force a consistent value using !important. */
+* {
+  --thread-content-max-width: var(--custom-content-max-width) !important;
+  --thread-content-margin: var(--custom-content-margin) !important;
+}
+
+/* ---- Composer controls ---- */
+/* Main composer shell: tweak radius, padding, min-height */
+form[data-type="unified-composer"] > div > div {
+  border-radius: var(--custom-composer-radius) !important;
+  padding: var(--custom-composer-padding) !important;
+  min-height: var(--custom-prompt-height) !important;
+}
+
+/* Editor font sizing and min height */
+form[data-type="unified-composer"] .ProseMirror,
+form[data-type="unified-composer"] textarea._fallbackTextarea_ebv8s_2 {
+  font-size: var(--custom-composer-font-size) !important;
+  min-height: var(--custom-prompt-height) !important;
+}

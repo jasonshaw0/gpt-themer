@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChatGPT Theme Customizer</title>
+  <link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <h1>GPT-Themer</h1>
+    <label class="switch">
+      <input type="checkbox" id="theme-enabled-toggle">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-link active" data-tab="colors">Colors</button>
+    <button class="tab-link" data-tab="sidebar">Sidebar</button>
+    <button class="tab-link" data-tab="content">Content</button>
+    <button class="tab-link" data-tab="composer">Composer</button>
+  </div>
+
+  <!-- Colors Tab -->
+  <div id="colors" class="tab-content active">
+    <h3>Color Settings</h3>
+    <div class="control-group">
+      <label for="bg-color">Background</label>
+      <input type="color" id="bg-color" data-css-var="--custom-bg-color" value="#1a1a1a">
+    </div>
+    <div class="control-group">
+      <label for="text-color">Text</label>
+      <input type="color" id="text-color" data-css-var="--custom-text-color" value="#f0f0f0">
+    </div>
+    <div class="control-group">
+      <label for="header-color">Accent</label>
+      <input type="color" id="header-color" data-css-var="--custom-header-color" value="#66b2ff">
+    </div>
+  </div>
+
+  <!-- Sidebar Tab -->
+  <div id="sidebar" class="tab-content">
+    <h3>Sidebar Sizing</h3>
+    <div class="control-group">
+      <label for="sidebar-width">Width</label>
+      <input type="range" id="sidebar-width" min="200" max="500" value="260" data-css-var="--custom-sidebar-width" data-unit="px">
+      <span class="value-display">260px</span>
+    </div>
+    <div class="control-group">
+      <label for="sidebar-rail-width">Rail Width</label>
+      <input type="range" id="sidebar-rail-width" min="2" max="20" value="8" data-css-var="--custom-sidebar-rail-width" data-unit="px">
+      <span class="value-display">8px</span>
+    </div>
+  </div>
+
+  <!-- Content Tab -->
+  <div id="content" class="tab-content">
+      <h3>Content Area</h3>
+      <div class="control-group">
+        <label for="content-max-width">Max Width</label>
+        <input type="range" id="content-max-width" min="500" max="1200" value="768" data-css-var="--custom-content-max-width" data-unit="px">
+        <span class="value-display">768px</span>
+      </div>
+      <div class="control-group">
+        <label for="content-margin">Side Margin</label>
+        <input type="range" id="content-margin" min="0" max="100" value="16" data-css-var="--custom-content-margin" data-unit="px">
+        <span class="value-display">16px</span>
+      </div>
+  </div>
+
+  <!-- Composer Tab -->
+  <div id="composer" class="tab-content">
+      <h3>Composer Box</h3>
+      <div class="control-group">
+        <label for="prompt-height">Min Height</label>
+        <input type="range" id="prompt-height" min="40" max="200" value="70" data-css-var="--custom-prompt-height" data-unit="px">
+        <span class="value-display">70px</span>
+      </div>
+      <div class="control-group">
+        <label for="composer-font-size">Font Size</label>
+        <input type="range" id="composer-font-size" min="12" max="24" value="14" data-css-var="--custom-composer-font-size" data-unit="px">
+        <span class="value-display">14px</span>
+      </div>
+      <div class="control-group">
+        <label for="composer-radius">Border Radius</label>
+        <input type="range" id="composer-radius" min="0" max="30" value="12" data-css-var="--custom-composer-radius" data-unit="px">
+        <span class="value-display">12px</span>
+      </div>
+      <div class="control-group">
+        <label for="composer-padding">Padding</label>
+        <input type="range" id="composer-padding" min="5" max="25" value="10" data-css-var="--custom-composer-padding" data-unit="px">
+        <span class="value-display">10px</span>
+      </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
